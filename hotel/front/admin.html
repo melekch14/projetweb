@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowny Hotel</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+        integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css' rel='stylesheet' />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js'></script>
+    <style>
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            height: 600px;
+            margin-top: 10px;
+        }
+
+        .logo {
+            margin-bottom: -10px;
+        }
+
+        .carousel-room {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            height: 600px;
+        }
+
+        .carousel-item-room {
+            height: 50px;
+            padding: 6px;
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            flex-shrink: 0;
+            width: 100%;
+            height: 50px;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item .text {
+
+            position: absolute;
+            top: 11%;
+            left: 5%;
+
+        }
+
+        .carousel-gallery {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            height: 400px;
+        }
+
+        .carousel-slide-gallery {
+            display: flex;
+            flex-shrink: 0;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item-gallery {
+            flex-shrink: 0;
+            width: calc(100% / 3);
+            height: 100%;
+            text-align: center;
+            line-height: 300px;
+        }
+
+        #event-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .event-modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .event-modal-content h2 {
+            margin-top: 0;
+        }
+
+        .event-modal-content p {
+            margin-bottom: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <header>
+        <div class="content flex_space">
+            <div class="logo">
+                <img src="images/logo.png" alt="">
+            </div>
+            <div class="navlinks">
+                <ul id="menulist">
+                    <li><a href="index.html">Reservations</a> </li>
+                    <li><a href="about.html">Inbox</a> </li>
+                    <li> <button class="primary-btn">BOOK NOW</button> </li>
+                </ul>
+                <span class="fa fa-bars" onclick="menutoggle()"></span>
+            </div>
+        </div>
+    </header>
+
+
+    <script>
+        var menulist = document.getElementById('menulist');
+        menulist.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (menulist.style.maxHeight == "0px") {
+                menulist.style.maxHeight = "100vh";
+            } else {
+                menulist.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+
+    <section class="about top" id="about">
+        <div class="container flex">
+            <div id='calendar'></div>
+        </div>
+    </section>
+
+    <div id="event-modal">
+        <div class="event-modal-content">
+            <h2 id="event-title"></h2>
+            <h2></h2>
+            <p id="event-start"></p>
+            <p id="event-end"></p>
+            <p id="adult"></p>
+            <p id="child"></p>
+            <p id="room"></p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container grid">
+          <div class="box">
+            <img src="images/logo-2.png" alt="">
+            <p>Your stay will be an opportunity to be guided towards one of the many exclusive tours carefully crafted by
+              our Clefs d'Or concierge. Our team works with passion to make your stay an unforgettable adventure under the
+              sign of discovery and emotion.</p>
+    
+            <div class="icon">
+              <i class="fa fa-facebook-f"></i>
+              <i class="fa fa-instagram"></i>
+              <i class="fa fa-twitter"></i>
+              <i class="fa fa-youtube"></i>
+            </div>
+          </div>
+    
+          <div class="box">
+            <h2>Links</h2>
+            <ul>
+              <li><a href="index.html" class="white-link">Home</a> </li>
+              <li><a href="about.html" class="white-link">About</a> </li>
+              <li><a href="rooms.html" class="white-link">Rooms</a> </li>
+              <li><a href="gallery.html" class="white-link">Gallery</a> </li>
+              <li><a href="services.html" class="white-link">Services</a> </li>
+              <li><a href="Evenements.html" class="white-link">Events</a> </li>
+            </ul>
+          </div>
+    
+          <div class="box">
+            <h2>Contact Us</h2>
+            <p>Book your room now.
+            </p>
+            <i class="fa fa-location-dot"></i>
+            <label>BP437 / HAMMAMET 8050 / TUNISIE </label> <br>
+            <i class="fa fa-phone"></i>
+            <label>+(216)70018180</label> <br>
+            <i class="fa fa-envelope"></i>
+            <label>CONTACT@LABADIRA.COM</label> <br>
+          </div>
+        </div>
+      </footer>
+
+    <div class="legal">
+        <p class="container">Copyright (c) 2022 Copyright Holder All Rights Reserved.</p>
+    </div>
+
+
+
+    <script src="https://kit.fontawesome.com/032d11eac3.js" crossorigin="anonymous"></script>
+    <script src="js/reservation.js"></script>
+</body>
+
+</html>
