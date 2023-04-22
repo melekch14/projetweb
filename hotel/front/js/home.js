@@ -1,56 +1,84 @@
 $(document).ready(function () {
 
+  if (localStorage.length != 0) {
+    var obj = JSON.parse(localStorage.sessionData);
+    if (obj.email == "" || obj.email == "admin@admin.com") {
+      window.location.href = "index.html";
+    }
+  } else {
+    window.location.href = "index.html";
+  }
+
   $(".aboutus").click(function () {
     window.location.href = "about.html";
   });
 
+  $(".contactus").click(function () {
+    window.location.href = "contact.html";
+  });
+
+  function checknegative(inputValue) {
+    if (inputValue < 0) {
+      // input value is negative
+      return true;
+    }
+    return false;
+  }
+
+
   // When the user clicks on the button, open the modal
   $("#reservation").click(function () {
-    $("#myModal").css("display", "block");
-    var sdate = new Date($("#startdate").val());
-    var edate = new Date($("#enddate").val());
-    sdate.setHours(10);
-    sdate.setMinutes(30);
-    sdate.setSeconds(15);
-    edate.setHours(14);
-    edate.setMinutes(30);
-    edate.setSeconds(15);
-    var startdate = sdate.toISOString();
-    var enddate = edate.toISOString();
+
     var adult = $("#adult").val();
     var child = $("#child").val();
     var room = $("#roomName").val();
 
-    $.ajax({
-      url: 'http://localhost:3000/reservation/check',
-      type: 'POST',
-      contentType: 'application/json',
-      data: JSON.stringify({
-        start_date: startdate,
-        end_date: enddate,
-        room: room
-      }),
-      success: function (data) {
-        $("#st").html(startdate);
-        $("#ed").html(enddate);
-        $("#ad").html(adult);
-        $("#ch").html(child);
-        $("#rm").html(room);
-        if (data.number == 0) {
-          $("#stt").html("Available");
-          $('#bookn').prop('disabled', false);
-        } else {
-          $("#stt").html("Unvailable");
-          $('#bookn').prop('disabled', true);
-          $('#bookn').css('background-color', 'red');
+    if ($("#startdate").val() == "" || $("#enddate").val() == "" || checknegative(adult) || checknegative(child) ||
+      adult == "" || child == "" || ($("#startdate").val() > $("#enddate").val())) {
+      showNotification('error', 'error');
+    } else {
+      $("#myModal").css("display", "block");
+      var sdate = new Date($("#startdate").val());
+      var edate = new Date($("#enddate").val());
+      sdate.setHours(10);
+      sdate.setMinutes(30);
+      sdate.setSeconds(15);
+      edate.setHours(14);
+      edate.setMinutes(30);
+      edate.setSeconds(15);
+      var startdate = sdate.toISOString();
+      var enddate = edate.toISOString();
+      $.ajax({
+        url: 'http://localhost:3000/reservation/check',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({
+          start_date: startdate,
+          end_date: enddate,
+          room: room
+        }),
+        success: function (data) {
+          $("#st").html(startdate);
+          $("#ed").html(enddate);
+          $("#ad").html(adult);
+          $("#ch").html(child);
+          $("#rm").html(room);
+          if (data.number == 0) {
+            $("#stt").html("Available");
+            $('#bookn').prop('disabled', false);
+            $('#bookn').css('background-color', '#7fc142');
+          } else {
+            $("#stt").html("Unvailable");
+            $('#bookn').prop('disabled', true);
+            $('#bookn').css('background-color', 'red');
+          }
+
+        },
+        error: function (xhr, status, error) {
+          console.error('Error:', error);
         }
-
-      },
-      error: function (xhr, status, error) {
-        console.error('Error:', error);
-      }
-    });
-
+      });
+    }
   });
 
   // When the user clicks on <span> (x), close the modal
@@ -65,7 +93,18 @@ $(document).ready(function () {
     }
   });
 
+  $("#subs").click(function (event) {
+    if ($("#emailsubs").val() == "") {
+      showNotification('error', 'error');
+    }
+    else {
+      showNotification('success', 'Thank you');
+    }
+  });
+
   $("#bookn").click(function () {
+    var obj = JSON.parse(localStorage.sessionData)
+    var username = obj.email.split("@")[0];
     $.ajax({
       url: 'http://localhost:3000/reservation/booknow',
       type: 'POST',
@@ -73,7 +112,7 @@ $(document).ready(function () {
       data: JSON.stringify({
         start_date: $("#st").html(),
         end_date: $("#ed").html(),
-        title: "melek",
+        title: username,
         adult: $("#ad").html(),
         child: $("#ch").html(),
         room: $("#rm").html(),

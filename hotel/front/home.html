@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crowny Hotel</title>
+  <title>La Badira</title>
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
     integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
@@ -15,118 +15,6 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"
     integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-
-  <style>
-    .carousel {
-      display: flex;
-      overflow: hidden;
-      width: 100%;
-      height: 600px;
-      margin-top: 10px;
-    }
-
-    .logo {
-      margin-bottom: -10px;
-    }
-
-    .carousel-room {
-      display: flex;
-      overflow: hidden;
-      width: 100%;
-      height: 600px;
-    }
-
-    .carousel-item-room {
-      height: 50px;
-      padding: 6px;
-      width: 100%;
-      transition: transform 0.5s ease;
-    }
-
-    .carousel-item {
-      flex-shrink: 0;
-      width: 100%;
-      height: 50px;
-      transition: transform 0.5s ease;
-    }
-
-    .carousel-item .text {
-
-      position: absolute;
-      top: 11%;
-      left: 5%;
-
-    }
-
-    .carousel-gallery {
-      display: flex;
-      overflow: hidden;
-      width: 100%;
-      height: 400px;
-    }
-
-    .carousel-slide-gallery {
-      display: flex;
-      flex-shrink: 0;
-      width: 100%;
-      height: 100%;
-      transition: transform 0.5s ease;
-    }
-
-    .carousel-item-gallery {
-      flex-shrink: 0;
-      width: calc(100% / 3);
-      height: 100%;
-      text-align: center;
-      line-height: 300px;
-    }
-
-    /* The modal (background) */
-    .modal {
-      display: none;
-      /* Hidden by default */
-      position: fixed;
-      /* Stay in place */
-      z-index: 1;
-      /* Sit on top */
-      left: 0;
-      top: 0;
-      width: 100%;
-      /* Full width */
-      height: 100%;
-      /* Full height */
-      overflow: auto;
-      /* Enable scroll if needed */
-      background-color: rgba(0, 0, 0, 0.4);
-      /* Black w/ opacity */
-    }
-
-    /* Modal Content/Box */
-    .modal-content {
-      background-color: #fefefe;
-      margin: 15% auto;
-      /* 15% from the top and centered */
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-      /* Could be more or less, depending on screen size */
-    }
-
-    /* The Close Button */
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-    }
-  </style>
 
 </head>
 
@@ -147,8 +35,7 @@
           <li><a href="services.html">Services</a> </li>
           <li><a href="Evenements.html">Events</a> </li>
           <li><a href="Contact.html">Contact us</a> </li>
-          <li> <i class="fa fa-search"></i> </li>
-          <li> <button class="primary-btn">BOOK NOW</button> </li>
+          <li> <button class="primary-btn" onclick="logout()">Log out</button> </li>
         </ul>
         <span class="fa fa-bars" onclick="menutoggle()"></span>
       </div>
@@ -161,36 +48,36 @@
         <div class="carousel-item">
           <img src="images/banner-1.png" alt="">
           <div class="text">
-            <h1>Spend Your Holiday</h1>
-            <p>Lorem ipsum dolor sit amet constur adipisicing elit sed do eiusmtem por incid.
+            <h1>La Badira</h1>
+            <p>Welcome to La Badira.
             </p>
             <div class="flex">
               <button class="primary-btn aboutus" id="aboutus">ABOUT US</button>
-              <button class="secondary-btn">CONTACT US</button>
+              <button class="secondary-btn contactus" id="contactus">CONTACT US</button>
             </div>
           </div>
         </div>
         <div class="carousel-item">
           <img src="images/banner-2.png" alt="">
           <div class="text">
-            <h1>Spend Your Holiday</h1>
-            <p>Lorem ipsum dolor sit amet constur adipisicing elit sed do eiusmtem por incid.
+            <h1>La Badira</h1>
+            <p>Welcome to La Badira.
             </p>
             <div class="flex">
               <button class="primary-btn aboutus" id="aboutus">ABOUT US</button>
-              <button class="secondary-btn">CONTACT US</button>
+              <button class="secondary-btn contactus" id="contactus">CONTACT US</button>
             </div>
           </div>
         </div>
         <div class="carousel-item">
           <img src="images/banner-3.png" alt="">
           <div class="text">
-            <h1>Spend Your Holiday</h1>
-            <p>Lorem ipsum dolor sit amet constur adipisicing elit sed do eiusmtem por incid.
+            <h1>La Badira</h1>
+            <p>Welcome to La Badira.
             </p>
             <div class="flex">
               <button class="primary-btn aboutus" id="aboutus">ABOUT US</button>
-              <button class="secondary-btn">CONTACT US</button>
+              <button class="secondary-btn contactus" id="contactus">CONTACT US</button>
             </div>
           </div>
         </div>
@@ -240,8 +127,8 @@
   <section class="newsletter mtop">
     <div class="container flex_space">
       <h1>Subscribe to Our Newsletter</h1>
-      <input type="text" placeholder="Your Email">
-      <input type="text" value="Subscribe">
+      <input type="text" placeholder="Your Email" id="emailsubs">
+      <input type="button" value="Subscribe" id="subs">
     </div>
   </section>
 
@@ -310,6 +197,7 @@
 
   <script src="https://kit.fontawesome.com/032d11eac3.js" crossorigin="anonymous"></script>
   <script src="js/home.js"></script>
+  <script src="js/logout.js"></script>
 </body>
 
 </html>

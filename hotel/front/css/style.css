@@ -10,7 +10,8 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: sans-serif;
   font-weight: 400;
 }
@@ -58,6 +59,7 @@ button {
 .container {
   max-width: 85%;
   margin: auto;
+  margin-bottom: 25px;
 }
 
 /*--------header---------*/
@@ -190,15 +192,18 @@ header .navlinks span {
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 20px;
 }
+
 .grid-6 {
   grid-template-columns: repeat(6, 1fr);
 }
-button#bookn{
+
+button#bookn {
   padding: 15px 25px;
   background: #7fc142;
   margin-top: 15px;
   color: white;
 }
+
 input {
   outline: none;
   border: none;
@@ -209,7 +214,7 @@ input {
   padding: 40px 0;
   background: #282834;
   color: #fff;
-  margin-top: -35px;
+  margin-top: -16px;
 }
 
 h1 {
@@ -235,7 +240,8 @@ h1 {
 
 /*--------book---------*/
 /*--------about---------*/
-.left, .right {
+.left,
+.right {
   width: 50%;
   padding: 30px;
 }
@@ -729,7 +735,8 @@ footer label {
     height: 50vh;
   }
 
-  .left, .right {
+  .left,
+  .right {
     width: 100%;
   }
 
@@ -832,12 +839,14 @@ footer label {
 .white-link {
   color: white;
 }
-#notification-container{
+
+#notification-container {
   position: fixed;
   top: 20px;
   right: 20px;
   overflow: visible;
 }
+
 #notification-container .notification {
   display: block;
   position: absolute;
@@ -851,23 +860,29 @@ footer label {
   animation-fill-mode: forwards;
   padding: 10px 20px;
 }
+
 #notification-container .notification.error {
   background: #ff7466;
 }
+
 #notification-container .notification.success {
   background: #66ff80;
 }
+
 #notification-container .notification.warning {
   background: #ffec66;
 }
+
 #notification-container .notification p.body {
   font-size: 0.85rem;
   margin-bottom: 5px;
 }
+
 #notification-container .notification h3.title {
   font-size: 1.3rem;
   font-weight: 400;
 }
+
 #notification-container .notification .btn {
   position: absolute;
   top: 5px;
@@ -882,6 +897,7 @@ footer label {
   width: 100%;
   padding: 15px 50px;
 }
+
 .inner-container h1.title {
   font-weight: 500;
   color: white;
@@ -890,11 +906,13 @@ footer label {
   text-transform: uppercase;
   margin: 15px;
 }
+
 .custom-card {
   height: 400px;
   padding: 7px;
   cursor: pointer;
 }
+
 .custom-card .custom-card-body {
   background-size: cover !important;
   background-position: center center !important;
@@ -904,6 +922,7 @@ footer label {
   position: relative;
   box-shadow: 0 10px 15px 2px #0e0e0e;
 }
+
 .custom-card .custom-card-body .body-card-inner {
   position: absolute;
   height: 130px;
@@ -914,6 +933,7 @@ footer label {
   left: 15px;
   bottom: 15px;
 }
+
 .custom-card .custom-card-body .body-card-inner h1 {
   font-weight: 300;
   margin: 2px;
@@ -923,6 +943,7 @@ footer label {
   border-radius: 10px;
   text-transform: capitalize;
 }
+
 .custom-card .custom-card-body .body-card-inner p {
   color: #3c3c3c;
   font-size: 0.9rem;
@@ -933,10 +954,221 @@ footer label {
 
 @keyframes slideinTop {
   from {
-      top: -150px;
+    top: -150px;
   }
 
   to {
-      top: 20px;
+    top: 20px;
   }
+}
+
+table,
+td,
+th {
+  border: 1px solid;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.carousel {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 600px;
+  margin-top: 10px;
+}
+
+.logo {
+  margin-bottom: -10px;
+}
+
+.carousel-room {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 600px;
+}
+
+.carousel-item-room {
+  height: 50px;
+  padding: 6px;
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  flex-shrink: 0;
+  width: 100%;
+  height: 50px;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item .text {
+
+  position: absolute;
+  top: 11%;
+  left: 5%;
+
+}
+
+.carousel-gallery {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 400px;
+  margin-bottom: 100px;
+}
+
+.carousel-slide-gallery {
+  display: flex;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item-gallery {
+  flex-shrink: 0;
+  width: calc(100% / 3);
+  height: 100%;
+  text-align: center;
+  line-height: 300px;
+}
+
+/* The modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#event-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.event-modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.event-modal-content h2 {
+  margin-top: 0;
+}
+
+.event-modal-content p {
+  margin-bottom: 5px;
+}
+
+.modal-room {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.modal-content-room {
+
+  background-color: #d4d1d1;
+  margin: 3% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+
+
+#contact-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#contact-form input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  /* added font-size property */
+}
+
+#contact-form input[type="button"] {
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#contact-form input[type="button"]:hover {
+  background-color: #3e8e41;
 }

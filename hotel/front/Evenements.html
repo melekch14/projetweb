@@ -2,204 +2,97 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crowny Hotel</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
-        integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
-        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-
-    <style>
-        .carousel {
-            display: flex;
-            overflow: hidden;
-            width: 100%;
-            height: 600px;
-            margin-top: 10px;
-        }
-
-        .logo {
-            margin-bottom: -10px;
-        }
-
-        .carousel-room {
-            display: flex;
-            overflow: hidden;
-            width: 100%;
-            height: 600px;
-        }
-
-        .carousel-item-room {
-            height: 50px;
-            padding: 6px;
-            width: 100%;
-            transition: transform 0.5s ease;
-        }
-
-        .carousel-item {
-            flex-shrink: 0;
-            width: 100%;
-            height: 50px;
-            transition: transform 0.5s ease;
-        }
-
-        .carousel-item .text {
-
-            position: absolute;
-            top: 11%;
-            left: 5%;
-
-        }
-
-        .carousel-gallery {
-            display: flex;
-            overflow: hidden;
-            width: 100%;
-            height: 400px;
-        }
-
-        .carousel-slide-gallery {
-            display: flex;
-            flex-shrink: 0;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.5s ease;
-        }
-
-        .carousel-item-gallery {
-            flex-shrink: 0;
-            width: calc(100% / 3);
-            height: 100%;
-            text-align: center;
-            line-height: 300px;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Badira</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+    integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
 
 
-    <header>
-        <div class="content flex_space">
-            <div class="logo">
-                <img src="images/logo.png" alt="">
+  <header>
+    <div class="content flex_space">
+      <div class="logo">
+        <img src="images/logo.png" alt="">
+      </div>
+      <div class="navlinks">
+        <ul id="menulist">
+          <li><a href="home.html">home</a> </li>
+          <li><a href="about.html">about</a> </li>
+          <li><a href="rooms.html">rooms</a> </li>
+          <li><a href="gallery.html">Gallery</a> </li>
+          <li><a href="services.html">Services</a> </li>
+          <li><a href="Evenements.html">Events</a> </li>
+          <li><a href="Contact.html">Contact us</a> </li>
+          <li> <button class="primary-btn" onclick="logout()">Log out</button> </li>
+        </ul>
+        <span class="fa fa-bars" onclick="menutoggle()"></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="home">
+    <div class="content">
+      <div class="carousel">
+        <div class="carousel-item">
+          <img src="images/banner-1.png" alt="">
+          <div class="text">
+            <h1>La Badira</h1>
+            <p>Welcome to La Badira.
+            </p>
+            <div class="flex">
+              <button class="primary-btn aboutus" id="aboutus">ABOUT US</button>
+              <button class="secondary-btn contactus" id="contactus">CONTACT US</button>
             </div>
-            <div class="navlinks">
-                <ul id="menulist">
-                    <li><a href="home.html">home</a> </li>
-                    <li><a href="about.html">about</a> </li>
-                    <li><a href="rooms.html">rooms</a> </li>
-                    <li><a href="gallery.html">Gallery</a> </li>
-                    <li><a href="services.html">Services</a> </li>
-                    <li><a href="Evenements.html">Events</a> </li>
-                    <li><a href="Contact.html">Contact us</a> </li>
-                    <li> <i class="fa fa-search"></i> </li>
-                    <li> <button class="primary-btn">BOOK NOW</button> </li>
-                </ul>
-                <span class="fa fa-bars" onclick="menutoggle()"></span>
-            </div>
+          </div>
         </div>
-    </header>
-
-
-    <script>
-        var menulist = document.getElementById('menulist');
-        menulist.style.maxHeight = "0px";
-
-        function menutoggle() {
-            if (menulist.style.maxHeight == "0px") {
-                menulist.style.maxHeight = "100vh";
-            } else {
-                menulist.style.maxHeight = "0px";
-            }
-        }
-    </script>
-
-
-    <section class="home">
-        <div class="content">
-            <div class="carousel">
-                <div class="carousel-item">
-                    <img src="images/banner-1.png" alt="">
-                    <div class="text">
-                        <h1>Spend Your Holiday</h1>
-                        <p>Lorem ipsum dolor sit amet constur adipisicing elit sed do eiusmtem por incid.
-                        </p>
-                        <div class="flex">
-                            <button class="primary-btn">READ MORE</button>
-                            <button class="secondary-btn">CONTACT US</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="images/banner-2.png" alt="">
-                    <div class="text">
-                        <h1>Spend Your Holiday</h1>
-                        <p>Lorem ipsum dolor sit amet constur adipisicing elit sed do eiusmtem por incid.
-                        </p>
-                        <div class="flex">
-                            <button class="primary-btn">READ MORE</button>
-                            <button class="secondary-btn">CONTACT US</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="images/banner-3.png" alt="">
-                    <div class="text">
-                        <h1>Spend Your Holiday</h1>
-                        <p>Lorem ipsum dolor sit amet constur adipisicing elit sed do eiusmtem por incid.
-                        </p>
-                        <div class="flex">
-                            <button class="primary-btn">READ MORE</button>
-                            <button class="secondary-btn">CONTACT US</button>
-                        </div>
-                    </div>
-                </div>
-
+        <div class="carousel-item">
+          <img src="images/banner-2.png" alt="">
+          <div class="text">
+            <h1>La Badira</h1>
+            <p>Welcome to La Badira.
+            </p>
+            <div class="flex">
+              <button class="primary-btn aboutus" id="aboutus">ABOUT US</button>
+              <button class="secondary-btn contactus" id="contactus">CONTACT US</button>
             </div>
-    </section>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/banner-3.png" alt="">
+          <div class="text">
+            <h1>La Badira</h1>
+            <p>Welcome to La Badira.
+            </p>
+            <div class="flex">
+              <button class="primary-btn aboutus" id="aboutus">ABOUT US</button>
+              <button class="secondary-btn contactus" id="contactus">CONTACT US</button>
+            </div>
+          </div>
+        </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const carousel = document.querySelector('.carousel');
-            const carouselItems = document.querySelectorAll('.carousel-item');
-            let currentIndex = 0;
-            const totalItems = carouselItems.length;
+      </div>
+  </section>
 
-            function moveToNextItem() {
-                currentIndex++;
-                if (currentIndex >= totalItems) {
-                    currentIndex = 0;
-                }
-                updateCarouselTransform();
-            }
-
-            function updateCarouselTransform() {
-                const transformValue = `translateX(-${currentIndex * 100}%)`;
-                carouselItems.forEach((item) => {
-                    item.style.transform = transformValue;
-                });
-            }
-
-            setInterval(moveToNextItem, 3000); // Change slide every 3 seconds
-        });
-
-    </script>
-
-<section class="news top rooms">
+  <section class="news top rooms">
     <div class="container">
       <div class="heading">
         <h1>Events</h1>
         <h2>Our Events</h2>
-        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        <p>In an elegant and functional setting, everything will be done to ensure that your seminar, incentive, or
+          conference leaves a lasting impression and runs as smoothly as possible. Our team is present and available 7
+          days a week.
       </div>
 
 
@@ -210,7 +103,7 @@
               <img src="images/blog-1.png" alt="">
             </div>
             <div class="text">
-              <h2>Evenements</h2>
+              <h2>Events</h2>
               <div class="admin flex">
                 <i class="fa fa-user"></i>
                 <label>Admin</label>
@@ -218,7 +111,7 @@
                 <label>500</label>
                 <i class="fa fa-comments"></i>
               </div>
-              <p>Notre lieu « la Badira » a été conçu pour faire de votre événement un moment unique</p>
+              <p>Our venue, 'La Badira', has been designed to make your event a unique moment.</p>
             </div>
           </div>
           <div class="items">
@@ -226,7 +119,7 @@
               <img src="images/blog-2.png" alt="">
             </div>
             <div class="text">
-              <h2>Séminaire</h2>
+              <h2>Seminar</h2>
               <div class="admin flex">
                 <i class="fa fa-user"></i>
                 <label>Admin</label>
@@ -234,7 +127,7 @@
                 <label>500</label>
                 <i class="fa fa-comments"></i>
               </div>
-              <p>Dans un cadre élégant et fonctionnel, tout sera mis en œuvre pour que votre séminaire</p>
+              <p>In an elegant and functional setting, everything will be done to ensure that your seminar...</p>
             </div>
           </div>
           <div class="items">
@@ -242,7 +135,7 @@
               <img src="images/blog-2.png" alt="">
             </div>
             <div class="text">
-              <h2>Conférence</h2>
+              <h2>Conference</h2>
               <div class="admin flex">
                 <i class="fa fa-user"></i>
                 <label>Admin</label>
@@ -250,7 +143,8 @@
                 <label>500</label>
                 <i class="fa fa-comments"></i>
               </div>
-              <p>incentive ou conférence marque les esprits et se déroule du mieux possible</p>
+              <p>We strive to make your incentive or conference a memorable experience and ensure that it runs as
+                smoothly </p>
             </div>
           </div>
         </div>
@@ -300,13 +194,15 @@
     </div>
   </footer>
 
-    <div class="legal">
-        <p class="container">Copyright (c) 2022 Copyright Holder All Rights Reserved.</p>
-    </div>
+  <div class="legal">
+    <p class="container">Copyright (c) 2023 Ryhab ARAFET.</p>
+  </div>
 
 
 
-    <script src="https://kit.fontawesome.com/032d11eac3.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/032d11eac3.js" crossorigin="anonymous"></script>
+  <script src="js/Events.js"></script>
+  <script src="js/logout.js"></script>
 </body>
 
 </html>
