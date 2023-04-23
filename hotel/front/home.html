@@ -83,12 +83,25 @@
       <div class="text">
         <h1> <span>Book </span> Your Rooms </h1>
       </div>
-      <div class="form">
-        <form class="grid grid-6">
-          <input type="date" placeholder="Araival Date" id="startdate">
-          <input type="date" placeholder="Departure Date" id="enddate">
-          <input type="number" placeholder="Adults" id="adult">
-          <input type="number" placeholder="Childern" id="child">
+      <form class="bookform">
+        <div>
+          <label for="startdate">Arrival Date</label>
+          <input type="date" id="startdate" placeholder="Arrival Date">
+        </div>
+        <div>
+          <label for="enddate">Departure Date</label>
+          <input type="date" id="enddate" placeholder="Departure Date">
+        </div>
+        <div>
+          <label for="adult">Adults</label>
+          <input type="number" id="adult" placeholder="0">
+        </div>
+        <div>
+          <label for="child">Children</label>
+          <input type="number" id="child" placeholder="0">
+        </div>
+        <div>
+          <label for="roomName">Room</label>
           <select id="roomName">
             <option value="Suite Wallis Simpson">Suite Wallis Simpson</option>
             <option value="Suite August Macke">Suite August Macke</option>
@@ -96,9 +109,11 @@
             <option value="Suite Jean Cocteau">Suite Jean Cocteau</option>
             <option value="Suite Yasmine">Suite Yasmine</option>
           </select>
+        </div>
+        <div>
           <input type="button" value="CHECK AVAILABILITY" id="reservation">
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
   </section>
 

@@ -187,14 +187,38 @@ header .navlinks span {
 
 /*--------home---------*/
 /*--------book---------*/
-.grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+.bookform {
+  display: flex;
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
 }
 
-.grid-6 {
-  grid-template-columns: repeat(6, 1fr);
+.bookform label {
+  display: block;
+  font-weight: bold;
+}
+
+.bookform input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+.bookform #roomName{
+  height: 60px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.bookform #reservation{
+  margin-top: 27px;
+  background-color: #4CAF50;
 }
 
 button#bookn {
@@ -234,8 +258,8 @@ h1 {
 }
 
 .book input:nth-last-child(1) {
-  background: #7fc142;
-  color: #fff;
+  background: #ffffff;
+  color: #080808;
 }
 
 /*--------book---------*/
