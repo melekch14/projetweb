@@ -1,21 +1,25 @@
 $(document).ready(function () {
 
-    if(localStorage.length != 0){
+    if (localStorage.length != 0) {
         var obj = JSON.parse(localStorage.sessionData);
-        if(obj.email != "admin@admin.com"){
-            window.location.href="index.html";
-          }
-    }else {
-        window.location.href="index.html";
+        if (obj.email != "admin@admin.com") {
+            window.location.href = "index.html";
+        }
+    } else {
+        window.location.href = "index.html";
     }
+
+    $('html, body').animate({
+        scrollTop: $('#admin').offset().top
+      }, 'slow');
 
     $(".aboutus").click(function () {
         window.location.href = "about.html";
-      });
-    
-      $(".contactus").click(function () {
+    });
+
+    $(".contactus").click(function () {
         window.location.href = "contact.html";
-      });
+    });
 
     $.ajax({
         url: 'http://localhost:3000/reservation/allreservations',
@@ -35,6 +39,11 @@ $(document).ready(function () {
             }
             console.log(events);
             $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                  },
                 events: events,
                 eventClick: function (event, jsEvent, view) {
                     var sdate = new Date(event.start);

@@ -7,6 +7,10 @@ if(localStorage.length != 0){
     window.location.href="index.html";
 }
 
+$('html, body').animate({
+    scrollTop: $('#about').offset().top
+  }, 'slow');
+
 $(".aboutus").click(function () {
     window.location.href = "about.html";
   });

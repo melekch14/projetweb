@@ -7,6 +7,10 @@ if (localStorage.length != 0) {
     window.location.href = "index.html";
 }
 
+$('html, body').animate({
+    scrollTop: $('#serviceSection').offset().top
+  }, 'slow');
+
 var menulist = document.getElementById('menulist');
 menulist.style.maxHeight = "0px";
 

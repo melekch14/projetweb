@@ -1,12 +1,9 @@
-/* Google Font CDN Link */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 .containerContact{
   width: 85%;
   background: #fff;
   border-radius: 6px;
   padding: 20px 60px 30px 40px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   margin: auto;
   margin-bottom: 15px;
 }
@@ -104,40 +101,6 @@
 }
 .button input[type="button"]:hover{
   background: #5029bc;
-}
-
-@media (max-width: 950px) {
-  .containerContact{
-    width: 90%;
-    padding: 30px 40px 40px 35px ;
-  }
-  .containerContact .content .right-side{
-   width: 75%;
-   margin-left: 55px;
-}
-}
-@media (max-width: 820px) {
-  .containerContact{
-    margin: 40px 0;
-    height: 100%;
-  }
-  .containerContact .content{
-    flex-direction: column-reverse;
-  }
- .containerContact .content .left-side{
-   width: 100%;
-   flex-direction: row;
-   margin-top: 40px;
-   justify-content: center;
-   flex-wrap: wrap;
- }
- .containerContact .content .left-side::before{
-   display: none;
- }
- .containerContact .content .right-side{
-   width: 100%;
-   margin-left: 0;
- }
 }
 
 

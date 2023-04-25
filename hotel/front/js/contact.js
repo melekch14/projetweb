@@ -9,6 +9,10 @@ $(document).ready(function () {
     window.location.href = "index.html";
   }
 
+  $('html, body').animate({
+    scrollTop: $('#contactSection').offset().top
+  }, 'slow');
+
   $(".aboutus").click(function () {
     window.location.href = "about.html";
   });
