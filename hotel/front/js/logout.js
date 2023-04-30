@@ -1,4 +1,8 @@
 function logout(){
     localStorage.clear();
-    window.location.href="index.html";
+    window.location.href="login.html";
+}
+
+function login(){
+    window.location.href="login.html";
 }

@@ -1,14 +1,5 @@
 $(document).ready(function () {
 
-  if (localStorage.length != 0) {
-    var obj = JSON.parse(localStorage.sessionData);
-    if (obj.email == "" || obj.email == "admin@admin.com") {
-      window.location.href = "index.html";
-    }
-  } else {
-    window.location.href = "index.html";
-  }
-
   $('html, body').animate({
     scrollTop: $('#contactSection').offset().top
   }, 'slow');
@@ -98,26 +89,3 @@ function menutoggle() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const carousel = document.querySelector('.carousel');
-  const carouselItems = document.querySelectorAll('.carousel-item');
-  let currentIndex = 0;
-  const totalItems = carouselItems.length;
-
-  function moveToNextItem() {
-    currentIndex++;
-    if (currentIndex >= totalItems) {
-      currentIndex = 0;
-    }
-    updateCarouselTransform();
-  }
-
-  function updateCarouselTransform() {
-    const transformValue = `translateX(-${currentIndex * 100}%)`;
-    carouselItems.forEach((item) => {
-      item.style.transform = transformValue;
-    });
-  }
-
-  setInterval(moveToNextItem, 3000); // Change slide every 3 seconds
-});

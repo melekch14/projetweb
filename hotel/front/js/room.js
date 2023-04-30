@@ -1,14 +1,5 @@
 $(document).ready(function () {
 
-  if (localStorage.length != 0) {
-    var obj = JSON.parse(localStorage.sessionData);
-    if (obj.email == "" || obj.email == "admin@admin.com") {
-      window.location.href = "index.html";
-    }
-  } else {
-    window.location.href = "index.html";
-  }
-
   $('html, body').animate({
     scrollTop: $('#roomSection').offset().top
   }, 'slow');
@@ -95,8 +86,7 @@ $(document).ready(function () {
   });
 
   $("#bn").click(function () {
-    var obj = JSON.parse(localStorage.sessionData)
-    var username = obj.email.split("@")[0];
+    
     var sdate = new Date($("#st").val());
       var edate = new Date($("#ed").val());
       sdate.setHours(10);
@@ -114,7 +104,7 @@ $(document).ready(function () {
       data: JSON.stringify({
         start_date: startdate,
         end_date: enddate,
-        title: username,
+        title: $("#resname").val(),
         adult: $("#ad").val(),
         child: $("#ch").val(),
         room: $(".rmn").html(),

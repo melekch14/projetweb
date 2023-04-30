@@ -22,13 +22,11 @@
       <div class="navlinks">
         <ul id="menulist">
           <li><a href="home.html">home</a> </li>
-          <li><a href="about.html">about</a> </li>
-          <li><a href="rooms.html">rooms</a> </li>
           <li><a href="gallery.html">Gallery</a> </li>
           <li><a href="services.html">Services</a> </li>
           <li><a href="Evenements.html">Events</a> </li>
-          <li><a href="Contact.html">Contact us</a> </li>
-          <li> <button class="primary-btn" onclick="logout()">Log out</button> </li>
+          <li><a href="rooms.html">rooms</a> </li>
+          <li> <button class="primary-btn" onclick="login()">Log in</button> </li>
         </ul>
         <span class="fa fa-bars" onclick="menutoggle()"></span>
       </div>
@@ -40,42 +38,18 @@
     <div class="content">
       <div class="carousel">
         <div class="carousel-item">
-          <img src="images/banner-1.png" alt="">
-          <div class="text">
-            <h1>La Badira</h1>
-            <p>Welcome to La Badira.
-            </p>
-            <div class="flex">
-              <button class="primary-btn aboutus" id="aboutus">ABOUT US</button>
-              <button class="secondary-btn contactus" id="contactus">CONTACT US</button>
+            <img src="images/banner-1.png" alt="">
+            <div class="text">
+                <h1>La Badira</h1>
+                <p>Welcome to La Badira.
+                </p>
+                <div class="flex">
+                    <button class="secondary-btn aboutus" id="aboutus">ABOUT US</button>
+                    <button class="secondary-btn contactus" id="contactus">CONTACT US</button>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="carousel-item">
-          <img src="images/banner-2.png" alt="">
-          <div class="text">
-            <h1>La Badira</h1>
-            <p>Welcome to La Badira.
-            </p>
-            <div class="flex">
-              <button class="primary-btn aboutus" id="aboutus">ABOUT US</button>
-              <button class="secondary-btn contactus" id="contactus">CONTACT US</button>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images/banner-3.png" alt="">
-          <div class="text">
-            <h1>La Badira</h1>
-            <p>Welcome to La Badira.
-            </p>
-            <div class="flex">
-              <button class="primary-btn aboutus" id="aboutus">ABOUT US</button>
-              <button class="secondary-btn contactus" id="contactus">CONTACT US</button>
-            </div>
-          </div>
-        </div>
-
+    </div>
       </div>
   </section>
 
@@ -122,51 +96,67 @@
 
   <div id="notification-container"></div>
 
-  <footer>
-    <div class="container grid">
-      <div class="box">
-        <img src="images/logo-2.png" alt="">
-        <p>Your stay will be an opportunity to be guided towards one of the many exclusive tours carefully crafted by
-          our Clefs d'Or concierge. Our team works with passion to make your stay an unforgettable adventure under the
-          sign of discovery and emotion.</p>
+  <footer class="footer-distributed">
 
-        <div class="icon">
-          <i class="fa fa-facebook-f"></i>
-          <i class="fa fa-instagram"></i>
-          <i class="fa fa-twitter"></i>
-          <i class="fa fa-youtube"></i>
-        </div>
-      </div>
+    <div class="footer-left">
 
-      <div class="box">
-        <h2>Links</h2>
-        <ul>
-          <li><a href="index.html" class="white-link">Home</a> </li>
-          <li><a href="about.html" class="white-link">About</a> </li>
-          <li><a href="rooms.html" class="white-link">Rooms</a> </li>
-          <li><a href="gallery.html" class="white-link">Gallery</a> </li>
-          <li><a href="services.html" class="white-link">Services</a> </li>
-          <li><a href="Evenements.html" class="white-link">Events</a> </li>
-        </ul>
-      </div>
+      <h3>La <span>Badira</span></h3>
 
-      <div class="box">
-        <h2>Contact Us</h2>
-        <p>Book your room now.
-        </p>
-        <i class="fa fa-location-dot"></i>
-        <label>BP437 / HAMMAMET 8050 / TUNISIE </label> <br>
-        <i class="fa fa-phone"></i>
-        <label>+(216)70018180</label> <br>
-        <i class="fa fa-envelope"></i>
-        <label>CONTACT@LABADIRA.COM</label> <br>
-      </div>
+      <p class="footer-links">
+        <a href="home.html" class="link-1">Home</a>
+
+        <a href="about.html">About</a>
+
+        <a href="rooms.html">Room</a>
+
+        <a href="gallery.html">Gallery</a>
+
+        <a href="services.html">Services</a>
+
+        <a href="Evenements.html">Events</a>
+
+        <a href="contact.html">Contact</a>
+      </p>
+
+      <p class="footer-company-name">ARAFET Ryhab © 2023</p>
     </div>
-  </footer>
 
-  <div class="legal">
-    <p class="container">Copyright (c) 2023 Ryhab ARAFET.</p>
-  </div>
+    <div class="footer-center">
+
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>BP437 / HAMMAMET 8050 / TUNISIE </span></p>
+      </div>
+
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>+(216)70018180</p>
+      </div>
+
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="mailto:support@company.com">CONTACT@LABADIRA.COM</a></p>
+      </div>
+
+    </div>
+
+    <div class="footer-right">
+
+      <p class="footer-company-about">
+        <span>La Badira</span>
+        As bright as the full moon seems obvious. Playing on the principle of shadow and light.
+      </p>
+
+      <div class="icon">
+        <i class="fa fa-facebook-f"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-youtube"></i>
+      </div>
+
+    </div>
+
+  </footer>
 
 
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 22 avr. 2023 à 02:11
+-- Généré le : dim. 30 avr. 2023 à 14:10
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.2.0
 
@@ -35,14 +35,6 @@ CREATE TABLE `contact` (
   `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Déchargement des données de la table `contact`
---
-
-INSERT INTO `contact` (`id`, `name`, `email`, `message`, `date`) VALUES
-(1, 'melek chaari', 'melek@gmail.com', 'Un texte est une série orale ou écrite de mots perçus comme constituant un ensemble cohérent, porteur de sens et utilisant les structures propres à une langue (conjugaisons, construction et association des phrases…)1. Un texte n\'a pas de longueur déterminée sauf dans le cas de poèmes à forme fixe comme le sonnet ou le haïku.\n\nL\'étude formelle des textes s\'appuie sur la linguistique, qui est l\'approche scientifique du langage.', '2023-04-21 23:07:04'),
-(2, 'ryhab arafet', 'ryhabarafet123@gmail.com', 'Un texte répond de façon plus ou moins pertinente à des critères qui en déterminent la qualité littéraire. On retient en particulier la structure d\'ensemble, la syntaxe et la ponctuation, l\'orthographe lexicale et grammaticale, la pertinence et la richesse du vocabulaire, la présence de figures de style, le registre de langue et la fonction recherchée (narrative, descriptive, expressive, argumentative, injonctive, poétique). C\'est l\'objet de l\'analyse littéraire.', '2023-04-21 23:11:33');
-
 -- --------------------------------------------------------
 
 --
@@ -58,16 +50,6 @@ CREATE TABLE `reservations` (
   `child` int(11) NOT NULL,
   `room` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `reservations`
---
-
-INSERT INTO `reservations` (`id`, `start_date`, `end_date`, `title`, `adult`, `child`, `room`) VALUES
-(1, '2023-04-22 08:30:15', '2023-04-24 12:30:15', 'melek', 2, 0, 'Suite Wallis Simpson'),
-(2, '2023-04-21 08:30:15', '2023-04-21 12:30:15', 'melek', 2, 1, 'Suite Wallis Simpson'),
-(3, '2023-04-24 08:30:15', '2023-04-27 12:30:15', 'melekch2', 2, 2, 'Suite August Macke'),
-(4, '2023-04-10 08:30:15', '2023-04-12 12:30:15', 'ryhabarafet', 2, 0, 'Suite Yasmine');
 
 -- --------------------------------------------------------
 
@@ -87,11 +69,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
-(1, 'ryhabarafet', 'ryhabarafet@gmail.com', 'ryhab123'),
-(4, 'melekch2', 'melekch2@gmail.com', 'melek123'),
-(5, 'melek', 'melek@gmail.com', 'melek1'),
-(6, 'admin', 'admin@admin.com', 'admin'),
-(7, 'ryhab', 'ryhab@gmail.com', 'ryhab');
+(1, 'admin', 'admin@admin.com', 'admin');
 
 --
 -- Index pour les tables déchargées
@@ -124,19 +102,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
